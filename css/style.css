@@ -10,15 +10,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 16px;
+  font-weight: 500;
+  font-family: "Red Hat Display", sans-serif;
 }
 
 body {
   display: grid;
+  grid-template-rows: auto 30px;
   place-items: center;
   width: 100%;
   height: 100vh;
-  background-color: var(--pale-blue);
+  font-size: 16px;
+  background: url("../images/pattern-background-mobile.svg"), var(--pale-blue);
+  background-position: top;
+  background-repeat: no-repeat;
 }
 
 p {
@@ -40,54 +45,62 @@ p {
 .card-description-container {
   display: grid;
   place-items: center;
-  padding: 20px;
+  padding: 16px 20px;
 }
+
 .card-text {
   text-align: center;
+  padding: 10px;
 }
 
 .card-text h1 {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   font-size: 24px;
+  font-weight: 900;
   color: var(--dark-blue);
+}
+
+.card-text p {
+  line-height: 24px;
 }
 
 .plan {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 3fr 1fr;
-  margin: 20px 0px;
-  padding: 5%;
+  margin: 12px 0px 20px;
+  padding: 16px;
   border-radius: 10px;
   background-color: var(--very-pale-blue);
 }
 
 .plan img {
-  height: 50px;
   margin-right: 20px;
-}
-.plan p {
-  display: flex;
-  flex-direction: column;
 }
 
 .plan p span:nth-child(1) {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-weight: 700;
   color: var(--dark-blue);
 }
 
 .plan a {
+  font-size: 14px;
+  font-weight: 900;
   color: var(--bright-blue);
 }
 
 .card-buttons {
   width: 100%;
-  height: auto;
 }
 
 .card-buttons button {
   width: 100%;
   height: 50px;
   border: none;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 button.primary-button {
@@ -102,12 +115,14 @@ button.secondary-button {
 }
 
 .attribution {
+  margin-bottom: 10px;
+  align-self: flex-end;
   font-size: 11px;
   text-align: center;
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--bright-blue);
 }
 
 @media (min-width: 375px) {
