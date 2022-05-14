@@ -20,19 +20,34 @@ body {
   place-items: center;
   width: 100%;
   min-height: 100vh;
-  font-size: 16px;
-  background: url("../images/pattern-background-mobile.svg"), var(--pale-blue);
-  background-position: top;
-  background-repeat: no-repeat;
+  background: var(--pale-blue);
 }
 
 p {
   color: var(--desaturated-blue);
 }
 
+.background-image {
+  align-self: flex-start;
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  background-image: url("../images/pattern-background-mobile.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.background-image img {
+  display: none;
+}
+
 .card-container {
+  display: grid;
+  place-items: center;
+  position: relative;
   width: 90%;
-  height: auto;
+  max-width: 440px;
   margin: 20px 0px;
   border-radius: 20px;
   overflow: hidden;
@@ -44,8 +59,7 @@ p {
 }
 
 .card-description-container {
-  display: grid;
-  place-items: center;
+  max-width: 380px;
   padding: 16px 20px;
 }
 
@@ -81,13 +95,14 @@ p {
 }
 
 .plan p span:nth-child(1) {
-  display: inline-block;
+  display: block;
   margin-bottom: 2px;
   font-weight: 900;
   color: var(--dark-blue);
 }
 
 .plan a {
+  justify-self: end;
   font-size: 14px;
   font-weight: 900;
   color: var(--bright-blue);
@@ -135,7 +150,6 @@ button.secondary-button:hover {
 .attribution {
   margin-bottom: 10px;
   align-self: flex-end;
-  text-align: center;
   font-size: 11px;
   color: var(--dark-blue);
 }
@@ -149,5 +163,14 @@ button.secondary-button:hover {
   opacity: 0.8;
 }
 
-@media (max-width: 340px) {
+@media (min-width: 540px) {
+  .background-image {
+    background-image: none;
+  }
+
+  .background-image img {
+    display: initial;
+    width: 100%;
+    height: 100%;
+  }
 }
